@@ -63,7 +63,7 @@ div p {
     transition: all 1s;
 }
 
-h2{
+h2 {
     color: goldenrod
 }
 
@@ -107,7 +107,14 @@ footer {
     text-align: center;
 
 }
+#menucheckbox,
+#menuburger {
+    display: none;
+}
 
+#navmeny{
+    display: none;
+}
 
 /*---------Media Queries*/
 @media screen and (max-width:1200px) {
@@ -141,7 +148,7 @@ footer {
 
 
 
-@media screen and (max-width:600px) {
+@media screen and (max-width:400px) {
     body {
         grid-template-columns: auto;
         grid-template-rows: min-content min-content auto 40px;
@@ -151,5 +158,27 @@ footer {
             "main"
             "footer"
         ;
+    }
+
+    #navmeny {
+        background-image: url(img/hamburger.png);
+        display: inline-block;
+        width: 20px;
+        height: 20px;
+        cursor: pointer;
+    }
+
+    nav ul {
+        flex-direction: column;
+        gap: 0;
+        
+    }
+
+    #menucheckbox~ul {
+        display: none;
+    }
+
+    #menucheckbox:checked~ul {
+        display: flex;
     }
 }
